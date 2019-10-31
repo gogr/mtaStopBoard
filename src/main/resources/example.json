@@ -1,0 +1,236 @@
+{
+  "Siri": {
+    "ServiceDelivery": {
+      "ResponseTimestamp": "2019-10-31T13:00:09.856-04:00",
+      "StopMonitoringDelivery": [
+        {
+          "MonitoredStopVisit": [
+            {
+              "MonitoredVehicleJourney": {
+                "LineRef": "MTA NYCT_B4",
+                "DirectionRef": "1",
+                "FramedVehicleJourneyRef": {
+                  "DataFrameRef": "2019-10-31",
+                  "DatedVehicleJourneyRef": "MTA NYCT_JG_D9-Weekday-SDon-077800_B4_17"
+                },
+                "JourneyPatternRef": "MTA_B40191",
+                "PublishedLineName": [
+                  "B4"
+                ],
+                "OperatorRef": "MTA NYCT",
+                "OriginRef": "MTA_300350",
+                "DestinationRef": "MTA_901003",
+                "DestinationName": [
+                  "BAY RIDGE NARROWS AV"
+                ],
+                "SituationRef": [],
+                "Monitored": true,
+                "VehicleLocation": {
+                  "Longitude": -73.931405,
+                  "Latitude": 40.586163
+                },
+                "Bearing": 279.8658,
+                "ProgressRate": "normalProgress",
+                "BlockRef": "MTA NYCT_JG_D9-Weekday-SDon_E_JG_44280_B4-17",
+                "VehicleRef": "MTA NYCT_763",
+                "MonitoredCall": {
+                  "ExpectedArrivalTime": "2019-10-31T13:02:40.913-04:00",
+                  "ArrivalProximityText": "0.5 miles away",
+                  "ExpectedDepartureTime": "2019-10-31T13:02:40.913-04:00",
+                  "DistanceFromStop": 825,
+                  "NumberOfStopsAway": 4,
+                  "StopPointRef": "MTA_307020",
+                  "VisitNumber": 1,
+                  "StopPointName": [
+                    "EMMONS AV/NOSTRAND AV"
+                  ]
+                }
+              },
+              "RecordedAtTime": "2019-10-31T13:00:05.000-04:00"
+            },
+            {
+              "MonitoredVehicleJourney": {
+                "LineRef": "MTA NYCT_B44",
+                "DirectionRef": "0",
+                "FramedVehicleJourneyRef": {
+                  "DataFrameRef": "2019-10-31",
+                  "DatedVehicleJourneyRef": "MTA NYCT_FB_D9-Weekday-SDon-079200_B44_32"
+                },
+                "JourneyPatternRef": "MTA_B44O0512",
+                "PublishedLineName": [
+                  "B44"
+                ],
+                "OperatorRef": "MTA NYCT",
+                "OriginRef": "MTA_300351",
+                "DestinationRef": "MTA_303422",
+                "DestinationName": [
+                  "FLUSHING AV via NOSTRAND"
+                ],
+                "OriginAimedDepartureTime": "2019-10-31T13:12:00.000-04:00",
+                "SituationRef": [],
+                "Monitored": true,
+                "VehicleLocation": {
+                  "Longitude": -73.939727,
+                  "Latitude": 40.589224
+                },
+                "Bearing": 281.00354,
+                "ProgressRate": "normalProgress",
+                "ProgressStatus": [
+                  "prevTrip"
+                ],
+                "BlockRef": "MTA NYCT_FB_D9-Weekday-SDon_E_FB_17340_B44-6",
+                "VehicleRef": "MTA NYCT_4621",
+                "MonitoredCall": {
+                  "ArrivalProximityText": "1.1 miles away",
+                  "DistanceFromStop": 1843,
+                  "NumberOfStopsAway": 10,
+                  "StopPointRef": "MTA_307020",
+                  "VisitNumber": 1,
+                  "StopPointName": [
+                    "EMMONS AV/NOSTRAND AV"
+                  ]
+                }
+              },
+              "RecordedAtTime": "2019-10-31T12:59:59.000-04:00"
+            },
+            {
+              "MonitoredVehicleJourney": {
+                "LineRef": "MTA NYCT_B4",
+                "DirectionRef": "1",
+                "FramedVehicleJourneyRef": {
+                  "DataFrameRef": "2019-10-31",
+                  "DatedVehicleJourneyRef": "MTA NYCT_JG_D9-Weekday-SDon-080300_B4_5"
+                },
+                "JourneyPatternRef": "MTA_B40191",
+                "PublishedLineName": [
+                  "B4"
+                ],
+                "OperatorRef": "MTA NYCT",
+                "OriginRef": "MTA_300350",
+                "DestinationRef": "MTA_901003",
+                "DestinationName": [
+                  "BAY RIDGE NARROWS AV"
+                ],
+                "OriginAimedDepartureTime": "2019-10-31T13:23:00.000-04:00",
+                "SituationRef": [],
+                "Monitored": true,
+                "VehicleLocation": {
+                  "Longitude": -73.948132,
+                  "Latitude": 40.584343
+                },
+                "Bearing": 4.4277844,
+                "ProgressRate": "normalProgress",
+                "ProgressStatus": [
+                  "prevTrip"
+                ],
+                "BlockRef": "MTA NYCT_JG_D9-Weekday-SDon_E_JG_35400_B4-5",
+                "VehicleRef": "MTA NYCT_449",
+                "MonitoredCall": {
+                  "ArrivalProximityText": "1.9 miles away",
+                  "DistanceFromStop": 3074,
+                  "NumberOfStopsAway": 15,
+                  "StopPointRef": "MTA_307020",
+                  "VisitNumber": 1,
+                  "StopPointName": [
+                    "EMMONS AV/NOSTRAND AV"
+                  ]
+                }
+              },
+              "RecordedAtTime": "2019-10-31T13:00:00.000-04:00"
+            },
+            {
+              "MonitoredVehicleJourney": {
+                "LineRef": "MTA NYCT_B44+",
+                "DirectionRef": "0",
+                "FramedVehicleJourneyRef": {
+                  "DataFrameRef": "2019-10-31",
+                  "DatedVehicleJourneyRef": "MTA NYCT_FB_D9-Weekday-SDon-080800_SB44_501"
+                },
+                "JourneyPatternRef": "MTA_SB44O0076",
+                "PublishedLineName": [
+                  "B44-SBS"
+                ],
+                "OperatorRef": "MTA NYCT",
+                "OriginRef": "MTA_300351",
+                "DestinationRef": "MTA_901010",
+                "DestinationName": [
+                  "SBS WLMSBRG BRDG PLZ via NSTRND via RGRS"
+                ],
+                "OriginAimedDepartureTime": "2019-10-31T13:28:00.000-04:00",
+                "SituationRef": [],
+                "Monitored": true,
+                "VehicleLocation": {
+                  "Longitude": -73.94601,
+                  "Latitude": 40.622241
+                },
+                "Bearing": 280.39432,
+                "ProgressRate": "normalProgress",
+                "ProgressStatus": [
+                  "prevTrip"
+                ],
+                "BlockRef": "MTA NYCT_FB_D9-Weekday-SDon_E_FB_38460_SB44-501",
+                "VehicleRef": "MTA NYCT_6173",
+                "MonitoredCall": {
+                  "ArrivalProximityText": "3.4 miles away",
+                  "DistanceFromStop": 5547,
+                  "NumberOfStopsAway": 8,
+                  "StopPointRef": "MTA_307020",
+                  "VisitNumber": 1,
+                  "StopPointName": [
+                    "EMMONS AV/NOSTRAND AV"
+                  ]
+                }
+              },
+              "RecordedAtTime": "2019-10-31T12:59:40.000-04:00"
+            },
+            {
+              "MonitoredVehicleJourney": {
+                "LineRef": "MTABC_BM3",
+                "DirectionRef": "0",
+                "FramedVehicleJourneyRef": {
+                  "DataFrameRef": "2019-10-31",
+                  "DatedVehicleJourneyRef": "MTABC_25140046-SCPD9-SC_D9-Weekday-10-SDon"
+                },
+                "JourneyPatternRef": "MTA_BM30141",
+                "PublishedLineName": [
+                  "BM3"
+                ],
+                "OperatorRef": "MTABC",
+                "OriginRef": "MTA_981005",
+                "DestinationRef": "MTA_300368",
+                "DestinationName": [
+                  "SHEEPSHEAD BAY EMMONS AV via OCEAN AV"
+                ],
+                "SituationRef": [],
+                "Monitored": true,
+                "VehicleLocation": {
+                  "Longitude": -73.97383,
+                  "Latitude": 40.723448
+                },
+                "Bearing": 237.68925,
+                "ProgressRate": "normalProgress",
+                "VehicleRef": "MTABC_3203",
+                "MonitoredCall": {
+                  "ExpectedArrivalTime": "2019-10-31T14:08:12.388-04:00",
+                  "ArrivalProximityText": "15.6 miles away",
+                  "ExpectedDepartureTime": "2019-10-31T14:08:12.388-04:00",
+                  "DistanceFromStop": 25126,
+                  "NumberOfStopsAway": 31,
+                  "StopPointRef": "MTA_307020",
+                  "VisitNumber": 1,
+                  "StopPointName": [
+                    "EMMONS AV/NOSTRAND AV"
+                  ]
+                }
+              },
+              "RecordedAtTime": "2019-10-31T13:00:07.000-04:00"
+            }
+          ],
+          "ResponseTimestamp": "2019-10-31T13:00:09.856-04:00",
+          "ValidUntil": "2019-10-31T13:01:09.856-04:00"
+        }
+      ],
+      "SituationExchangeDelivery": []
+    }
+  }
+}

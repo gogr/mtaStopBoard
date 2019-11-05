@@ -11,12 +11,11 @@ import java.util.stream.Collectors;
 public class QueryStopMonitoringData {
     private static final String BASE_URL = "http://bustime.mta.info/api/siri/stop-monitoring.json";
     private static final String API_KEY = "9492a8b9-5212-4ab4-85c5-c957703ae065";
-    private static final String STOP_ID = "307020";
     private static final String API_VERSION = "2";
-    private static final String URL;
+    private String URL;
 
-    static {
-        URL = BASE_URL + "?key=" + API_KEY + "&MonitoringRef=" + STOP_ID + "&version=" + API_VERSION;
+    QueryStopMonitoringData(String stopId) {
+        URL = BASE_URL + "?key=" + API_KEY + "&MonitoringRef=" + stopId + "&version=" + API_VERSION;
     }
 
     public String queryStopData() throws IOException {

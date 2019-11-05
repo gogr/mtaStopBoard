@@ -11,31 +11,13 @@ public class Bus {
     private String arrivalProximity;
     private String progress;
     private String arrivalTime;
-    private String terminalDepartureTime;
+    private String terminalDepartureTimestamp;
     private String vehicle;
+    private String recordedAtTimestamp;
+    private String progressStatus;
 
-    public String getTerminalDepartureTime() {
-        return terminalDepartureTime;
-    }
-
-    public void setTerminalDepartureTime(String terminalDepartureTime) {
-        this.terminalDepartureTime = terminalDepartureTime;
-    }
-
-    public String getLine() {
-        return line;
-    }
-
-    public String getArrivalProximity() {
-        return arrivalProximity;
-    }
-
-    public String getProgress() {
-        return progress;
-    }
-
-    public String getArrivalTime() {
-        return arrivalTime;
+    public void setTerminalDepartureTimestamp(String terminalDepartureTimestamp) {
+        this.terminalDepartureTimestamp = terminalDepartureTimestamp;
     }
 
     public String getVehicle() {
@@ -55,32 +37,27 @@ public class Bus {
     }
 
     public void setArrivalTime(String arrivalTime) {
-        this.arrivalTime = arrivalTime;
         ZonedDateTime arrivalDate = ZonedDateTime.parse(arrivalTime, DateTimeFormatter.ISO_DATE_TIME);
-        ZonedDateTime now = ZonedDateTime.now();
-        String arrivesIn;
-        if (ChronoUnit.SECONDS.between(now, arrivalDate) < 60) {
-            arrivesIn = ChronoUnit.SECONDS.between(now, arrivalDate) + " seconds";
-        } else if (ChronoUnit.MINUTES.between(now, arrivalDate) < 60) {
-            arrivesIn = ChronoUnit.MINUTES.between(now, arrivalDate) + " minutes";
-        } else {
-            arrivesIn = ChronoUnit.HOURS.between(now, arrivalDate) + " hours";
-        }
-        this.arrivalTime = String.format("%s(%10s)", arrivalDate.format(ofPattern("HH:mm:ss")), arrivesIn);
+        this.arrivalTime = arrivalDate.format(ofPattern("HH:mm:ss"));
     }
 
     public void setVehicle(String vehicle) {
         this.vehicle = vehicle.replaceAll(".*_", "");
     }
 
+
+    public void setRecordedAtTimestamp(String recordedAtTimestamp) {
+        ZonedDateTime recordedDate = ZonedDateTime.parse(recordedAtTimestamp, DateTimeFormatter.ISO_DATE_TIME);
+        this.recordedAtTimestamp = recordedDate.format(ofPattern("HH:mm:ss"));
+    }
+
+    public void setProgressStatus(String progressStatus) {
+        this.progressStatus = progressStatus;
+    }
+
     @Override
     public String toString() {
-        return String.format("\n\tBus{'%7s', progress='%20s', arrival='%s', terminalDeparture='%s', arrivalProximity='%s', vehicle='%s'}",
-                line,
-                progress,
-                arrivalTime == null ? "Undefined" : arrivalTime,
-                terminalDepartureTime == null ? "Undefined" : terminalDepartureTime,
-                arrivalProximity,
-                vehicle);
+        return String.format("%7s: arrival='%8s', arrivalProximity='%16s', vehicle='%4s', progress='%14s';",
+                line, arrivalTime, arrivalProximity, vehicle, progress);
     }
 }

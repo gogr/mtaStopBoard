@@ -67,10 +67,4 @@ public class StopViewServer {
         } catch (Exception ignored) {
         }
     }
-
-    public static void main(String[] args) throws IOException {
-        String rawStopData = new QueryStopMonitoringData().queryStopData();
-        Stop stop = new Stop(rawStopData);
-        System.out.println(stop);
-    }
 }

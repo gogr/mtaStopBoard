@@ -8,13 +8,16 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
+import static info.mta.bustime.TimeUtils.getTimeDiff;
 import static java.time.format.DateTimeFormatter.ofPattern;
 
 public class Stop {
+    private String stopId;
+    private String stopName;
     private ZonedDateTime responseDate;
-
-    private Map<String, Bus> upcomingVehicles = new HashMap<>();
+    private Map<String, Bus> upcomingBuses = new HashMap<>();
 
     public Stop(String rawStopData) throws JsonProcessingException {
         processJson(rawStopData);
@@ -23,11 +26,12 @@ public class Stop {
     private void processJson(String rawStopData) throws JsonProcessingException {
         JsonNode mapper = new ObjectMapper().readTree(rawStopData).get("Siri").get("ServiceDelivery");
         String responseTimestamp = mapper.get("ResponseTimestamp").asText();
-        responseDate = ZonedDateTime.parse(responseTimestamp, DateTimeFormatter.ISO_DATE_TIME);
+        this.responseDate = ZonedDateTime.parse(responseTimestamp, DateTimeFormatter.ISO_DATE_TIME);
         JsonNode busesNode = mapper.get("StopMonitoringDelivery").findValue("MonitoredStopVisit");
         for (JsonNode busNode : busesNode) {
-            JsonNode vehicleJourney = busNode.findValue("MonitoredVehicleJourney");
             Bus bus = new Bus();
+            bus.setRecordedAtTimestamp(busNode.findValue("RecordedAtTime").asText());
+            JsonNode vehicleJourney = busNode.findValue("MonitoredVehicleJourney");
             String vehicle = vehicleJourney.findValue("VehicleRef").asText();
             bus.setVehicle(vehicle);
             bus.setLine(vehicleJourney.get("PublishedLineName").iterator().next().asText());
@@ -36,18 +40,21 @@ public class Stop {
             if (vehicleJourney.findValue("ExpectedArrivalTime") != null) {
                 bus.setArrivalTime(vehicleJourney.findValue("ExpectedArrivalTime").asText());
             }
-            if (vehicleJourney.findValue("OriginAimedDepartureTime") != null) {
-                bus.setTerminalDepartureTime(vehicleJourney.findValue("OriginAimedDepartureTime").asText());
+            if (vehicleJourney.findValue("ProgressStatus") != null) {
+                bus.setProgressStatus(vehicleJourney.get("ProgressStatus").toString());
             }
-            upcomingVehicles.put(bus.getVehicle(), bus);
+            if (vehicleJourney.findValue("OriginAimedDepartureTime") != null) {
+                bus.setTerminalDepartureTimestamp(vehicleJourney.findValue("OriginAimedDepartureTime").asText());
+            }
+            upcomingBuses.put(bus.getVehicle(), bus);
         }
     }
 
     @Override
     public String toString() {
-
-        return "Stop{responseDate=" + responseDate.format(ofPattern("HH:mm:ss")) +
-                ", upcomingVehicles=" + upcomingVehicles.values() +
-                '}';
+        String stop = String.format("Retrieved at %8s(%2s ago). Upcoming %2d buses",
+                responseDate.format(ofPattern("HH:mm:ss")), getTimeDiff(responseDate), upcomingBuses.size());
+        String buses = upcomingBuses.values().stream().map(Bus::toString).collect(Collectors.joining("\n"));
+        return String.format("%s\n%s", stop, buses);
     }
 }
